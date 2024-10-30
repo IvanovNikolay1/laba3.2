@@ -1,0 +1,27 @@
+﻿<Window x:Class="Лаба3._2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Лаба3._2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <DockPanel>
+        <!-- Панель инструментов -->
+        <ToolBar DockPanel.Dock="Top">
+            <ComboBox x:Name="ColorComboBox" Width="120" SelectionChanged="ColorComboBox_SelectionChanged">
+                <ComboBoxItem Content="Красный" Tag="Red" />
+                <ComboBoxItem Content="Зеленый" Tag="Green" />
+                <ComboBoxItem Content="Синий" Tag="Blue" />
+                <ComboBoxItem Content="Черный" Tag="Black" />
+            </ComboBox>
+            <Slider x:Name="BrushSizeSlider" Minimum="1" Maximum="50" Value="5" Width="200" ValueChanged="BrushSizeSlider_ValueChanged" />
+            <RadioButton x:Name="DrawMode" GroupName="Mode" Content="Рисование" IsChecked="True" Checked="Mode_Checked" />
+            <RadioButton x:Name="EditMode" GroupName="Mode" Content="Редактирование" Checked="Mode_Checked" />
+            <RadioButton x:Name="EraseMode" GroupName="Mode" Content="Удаление" Checked="Mode_Checked" />
+        </ToolBar>
+
+        <!-- Поле для рисования -->
+        <Canvas x:Name="DrawingCanvas" Background="White" MouseDown="DrawingCanvas_MouseDown" MouseMove="DrawingCanvas_MouseMove" MouseUp="DrawingCanvas_MouseUp" />
+    </DockPanel>
+</Window>
